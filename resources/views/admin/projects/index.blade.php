@@ -32,7 +32,8 @@
                                     <i class="fas fa-pencil me-2"></i>
                                 </a>
 
-                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
+                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST"
+                                    class="delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn" type="submit">
@@ -53,4 +54,7 @@
             </tbody>
         </table>
     </header>
+@endsection
+@section('scripts')
+    @vite('resources/js/delete_confirmation.js')
 @endsection
