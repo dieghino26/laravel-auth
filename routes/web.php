@@ -22,7 +22,7 @@ Route::get('/', GuestHomeController::class)->name("guest.home");
 
 Route::prefix('/admin')->name('admin.')->middleware('auth')->group(function () {
     //rotta admin home
-    Route::get('/admin', AdminHomeController::class)->name('home');
+    Route::get('', AdminHomeController::class)->name('home');
     //rotte admin post
     Route::resource('projects', ProjectController::class);
 });
