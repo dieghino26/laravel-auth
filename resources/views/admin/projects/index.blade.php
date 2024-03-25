@@ -23,8 +23,10 @@
                         <td>{{ $project->slug }}</td>
                         <td>{{ $project->created_at }}</td>
                         <td>{{ $project->updated_at }}</td>
-                        <td href="{{ route('admin.projects.show', $project) }}">
-                            <i class="fas fa-eye"></i>
+                        <td>
+                            <a href="{{ route('admin.projects.show', $project) }}" class="btn">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </td>
                     </tr>
 
