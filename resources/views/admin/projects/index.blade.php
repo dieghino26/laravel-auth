@@ -24,9 +24,22 @@
                         <td>{{ $project->created_at }}</td>
                         <td>{{ $project->updated_at }}</td>
                         <td>
-                            <a href="{{ route('admin.projects.show', $project) }}" class="btn">
-                                <i class="fas fa-eye"></i>
-                            </a>
+                            <div class="d-flex justify-content-end gap-2">
+                                <a href="{{ route('admin.projects.show', $project) }}" class="btn">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="{{ route('admin.projects.edit', $project) }}" class="btn">
+                                    <i class="fas fa-pencil me-2"></i>
+                                </a>
+
+                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn" type="submit">
+                                        <i class="fas fa-trash me-2"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
 

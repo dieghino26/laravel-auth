@@ -22,8 +22,22 @@
     </main>
 
     <footer class="d-flex justify-content-between align-items-center my-3">
-
         <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary">Torna indietro</a>
+
+        <div class="d-flex justify-content-between gap-2">
+            <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-warning">
+                <i class="fas fa-pencil me-2"></i> Modifica
+            </a>
+
+            <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">
+                    <i class="fas fa-trash me-2"></i> Elimina
+                </button>
+            </form>
+        </div>
+
 
     </footer>
 
