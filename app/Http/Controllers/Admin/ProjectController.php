@@ -23,7 +23,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $project = new Project();
+        return view('admin.projects.create', compact('project'));
     }
 
     /**
@@ -37,7 +38,7 @@ class ProjectController extends Controller
         $project->fill($data);
         $project->slug = Str::slug($project->title);
         $project->save();
-        return to_route('admin.projects.show', $project)->with('message', 'Progetti creato con successo')->with('type', 'success');
+        return to_route('admin.projects.show', $project)->with('message', 'Progetto creato con successo')->with('type', 'success');
     }
 
     /**
@@ -53,7 +54,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -61,7 +62,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        $project->slug = Str::slug($data['title']);
+        $project->update($data);
+        return to_route('admin.projects.show', $project)->with('message', 'Progetto modificato con successo')->with('type', 'success');
     }
 
     /**
