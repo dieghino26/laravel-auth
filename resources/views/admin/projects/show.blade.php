@@ -15,8 +15,8 @@
             @endif
             <p>{{ $project->description }}</p>
             <div>
-                <strong>Creato il:</strong>{{ $project->created_at }}
-                <strong>Ultima modifica:</strong>{{ $project->uptaded_at }}
+                <strong>Creato il: </strong>{{ $project->getFormattedDate('created_at', 'd-m-Y H:i:s') }}
+                <strong>Ultima modifica: </strong>{{ $project->getFormattedDate('updated_at') }}
             </div>
         </div>
     </main>

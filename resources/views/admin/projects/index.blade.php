@@ -13,6 +13,9 @@
                     <th scope="col">Slug</th>
                     <th scope="col">Creato il</th>
                     <th scope="col">Ultima modifica</th>
+                    <th><a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn secondary"><i
+                                class="fas fa-plus me-2"></i>
+                            Nuovo</a></th>
                 </tr>
             </thead>
             <tbody>
