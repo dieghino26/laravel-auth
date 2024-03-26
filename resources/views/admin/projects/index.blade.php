@@ -21,8 +21,8 @@
                         <th scope="row">{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->slug }}</td>
-                        <td>{{ $project->created_at }}</td>
-                        <td>{{ $project->updated_at }}</td>
+                        <td>{{ $project->getFormattedDate('created_at', 'd-m-Y H:i:s') }}</td>
+                        <td>{{ $project->getFormattedDate('updated_at') }}</td>
                         <td>
                             <div class="d-flex justify-content-end gap-2">
                                 <a href="{{ route('admin.projects.show', $project) }}" class="btn">
