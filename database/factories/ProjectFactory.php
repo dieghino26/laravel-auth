@@ -25,7 +25,6 @@ class ProjectFactory extends Factory
             'slug' => $slug,
             'description' => fake()->paragraphs(10, true),
             'image' => fake()->imageUrl(250, 250, true),
-            'is_completed' => fake()->boolean(),
         ];
     }
 }
